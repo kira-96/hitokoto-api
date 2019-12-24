@@ -4,11 +4,14 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// 自定义分类转换
+    /// </summary>
     internal class CategoryConverter : JsonConverter
     {
         private readonly Dictionary<string, Category> _categoryDic =
-               new Dictionary<string, Category>()
-               {
+            new Dictionary<string, Category>()
+            {
                 { "a", Category.Anime },
                 { "b", Category.Comic },
                 { "c", Category.Game  },
@@ -16,7 +19,7 @@
                 { "e", Category.Myself},
                 { "f", Category.Internet },
                 { "g", Category.Other }
-               };
+            };
 
         public override bool CanRead => true;
 
@@ -31,7 +34,7 @@
         {
             if (!(reader?.Value is string key))
                 return Category.None;
-
+            
             return _categoryDic[key];
         }
 

@@ -10,6 +10,12 @@ namespace HitokotoApi
     {
         private const string API_URL = @"https://v1.hitokoto.cn/";
 
+        /// <summary>
+        /// 获取一言
+        /// </summary>
+        /// <param name="cate">分类<see cref="Category"/></param>
+        /// <param name="textOnly">是否只需要内容</param>
+        /// <returns>一言<see cref="Hitokoto"/></returns>
         public static async Task<Hitokoto> GetHitokoto(Category cate = Category.None, bool textOnly = false)
         {
             StringBuilder param = new StringBuilder("?charset=utf-8");
@@ -21,6 +27,7 @@ namespace HitokotoApi
 
             HttpWebRequest req = WebRequest.Create(API_URL + param) as HttpWebRequest;
 
+            // 只支持 GET 方法
             req.Method = "GET";
             req.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
 

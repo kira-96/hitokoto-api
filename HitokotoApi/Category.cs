@@ -38,6 +38,12 @@
 
     public static class CategoryEx
     {
+        /// <summary>
+        /// 扩展方法
+        /// 将分类转换成url请求参数
+        /// </summary>
+        /// <param name="category">分类</param>
+        /// <returns>url参数</returns>
         public static string ToParamString(this Category category)
         {
             switch (category)
