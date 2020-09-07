@@ -90,15 +90,27 @@
             string content,
             Category cate = Category.None,
             string from = null,
+            string fromWho = null,
             string creator = null,
-            DateTime time = new DateTime())
+            string creatorUid = null,
+            string reviewer = null,
+            string uuid = null,
+            string commitFrom = null,
+            DateTime time = new DateTime(),
+            int length = 0)
         {
             Id = id;
             Content = content;
             Category = cate;
             From = from;
+            FromWho = fromWho;
             Creator = creator;
+            CreatorUid = creatorUid;
+            Reviewer = reviewer;
+            Uuid = uuid;
+            CommitFrom = commitFrom;
             Time = time;
+            Length = length;
         }
     }
 }
