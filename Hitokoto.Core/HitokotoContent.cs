@@ -1,4 +1,4 @@
-﻿namespace HitokotoApi
+﻿namespace Hitokoto
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
@@ -7,16 +7,16 @@
     /// <summary>
     /// 一言
     /// </summary>
-    public class Hitokoto
+    public class HitokotoContent
     {
         /// <summary>
-        /// ID
+        /// 一言标识
         /// </summary>
         [JsonProperty("id")]
         public int Id { get; private set; }
 
         /// <summary>
-        /// 一言内容
+        /// 一言正文
         /// </summary>
         [JsonProperty("hitokoto")]
         public string Content { get; private set; }
@@ -29,16 +29,46 @@
         public Category Category { get; private set; }
 
         /// <summary>
-        /// 出自哪里
+        /// 一言的出处
         /// </summary>
         [JsonProperty("from")]
         public string From { get; private set; }
 
         /// <summary>
-        /// 上传者
+        /// 一言的作者
+        /// </summary>
+        [JsonProperty("from_who")]
+        public string FromWho { get; private set; }
+
+        /// <summary>
+        /// 添加者
         /// </summary>
         [JsonProperty("creator")]
         public string Creator { get; private set; }
+
+        /// <summary>
+        /// 添加者用户标识
+        /// </summary>
+        [JsonProperty("creator_uid")]
+        public string CreatorUid { get; private set; }
+
+        /// <summary>
+        /// 审核员标识
+        /// </summary>
+        [JsonProperty("reviewer")]
+        public string Reviewer { get; private set; }
+
+        /// <summary>
+        /// 一言唯一标识；可以链接到 https://hitokoto.cn?uuid=[uuid] 查看这个一言的完整信息
+        /// </summary>
+        [JsonProperty("uuid")]
+        public string Uuid { get; private set; }
+
+        /// <summary>
+        /// 提交方式
+        /// </summary>
+        [JsonProperty("commit_from")]
+        public string CommitFrom { get; private set; }
 
         /// <summary>
         /// 上传时间
@@ -48,8 +78,14 @@
         [JsonConverter(typeof(UnixDateTimeConverter))]  // Unix 时间戳
         public DateTime Time { get; private set; }
 
+        /// <summary>
+        /// 句子长度
+        /// </summary>
+        [JsonProperty("length")]
+        public int Length { get; private set; }
+
         [JsonConstructor]
-        public Hitokoto(
+        public HitokotoContent(
             int id,
             string content,
             Category cate = Category.None,

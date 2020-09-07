@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace HitokotoApiTest2
+namespace Hitokoto.Sample2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

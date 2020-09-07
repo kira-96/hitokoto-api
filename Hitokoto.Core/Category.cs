@@ -1,4 +1,4 @@
-﻿namespace HitokotoApi
+﻿namespace Hitokoto
 {
     public enum Category
     {
@@ -34,6 +34,26 @@
         /// 其它
         /// </summary>
         Other,
+        /// <summary>
+        /// 影视
+        /// </summary>
+        Movies,
+        /// <summary>
+        /// 诗词
+        /// </summary>
+        Poetry,
+        /// <summary>
+        /// 网易云
+        /// </summary>
+        NeteaseCloud,
+        /// <summary>
+        /// 哲学
+        /// </summary>
+        Philosophy,
+        /// <summary>
+        /// 抖机灵
+        /// </summary>
+        抖机灵
     }
 
     public static class CategoryEx
@@ -62,8 +82,18 @@
                     return "f";
                 case Category.Other:
                     return "g";
+                case Category.Movies:
+                    return "h";
+                case Category.Poetry:
+                    return "i";
+                case Category.NeteaseCloud:
+                    return "j";
+                case Category.Philosophy:
+                    return "k";
+                case Category.抖机灵:
+                    return "l";
                 default:
-                    return "";
+                    return "a";
             }
         }
     }

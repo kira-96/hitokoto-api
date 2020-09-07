@@ -1,4 +1,4 @@
-﻿namespace HitokotoApi
+﻿namespace Hitokoto
 {
     using Newtonsoft.Json;
     using System;
@@ -18,7 +18,12 @@
                 { "d", Category.Novel },
                 { "e", Category.Myself},
                 { "f", Category.Internet },
-                { "g", Category.Other }
+                { "g", Category.Other },
+                { "h", Category.Movies },
+                { "i", Category.Poetry },
+                { "j", Category.NeteaseCloud },
+                { "k", Category.Philosophy },
+                { "l", Category.抖机灵 }
             };
 
         public override bool CanRead => true;

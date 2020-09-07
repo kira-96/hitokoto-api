@@ -4,19 +4,20 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HitokotoApi
+namespace Hitokoto
 {
-    public static class HitokotoUtils
+    public static class HitokotoHelper
     {
-        private const string API_URL = @"https://v1.hitokoto.cn/";
+        private const string GLOBAL_API_URL = @"https://v1.hitokoto.cn/";
+        // private const string INTERNATIONAL_API_URL = @"https://international.v1.hitokoto.cn";
 
         /// <summary>
         /// 获取一言
         /// </summary>
         /// <param name="cate">分类<see cref="Category"/></param>
         /// <param name="textOnly">是否只需要内容</param>
-        /// <returns>一言<see cref="Hitokoto"/></returns>
-        public static async Task<Hitokoto> GetHitokoto(Category cate = Category.None, bool textOnly = false)
+        /// <returns>一言<see cref="HitokotoContent"/></returns>
+        public static async Task<HitokotoContent> GetHitokoto(Category cate = Category.None, bool textOnly = false)
         {
             StringBuilder param = new StringBuilder("?charset=utf-8");
             if (cate != Category.None)
@@ -25,7 +26,7 @@ namespace HitokotoApi
             if (textOnly)
                 param.Append("&encode=text");
 
-            HttpWebRequest req = WebRequest.Create(API_URL + param) as HttpWebRequest;
+            HttpWebRequest req = WebRequest.Create(GLOBAL_API_URL + param) as HttpWebRequest;
 
             // 只支持 GET 方法
             req.Method = "GET";
@@ -38,9 +39,9 @@ namespace HitokotoApi
                 string content = await reader.ReadToEndAsync();
 
                 if (textOnly)
-                    return new Hitokoto(0, content);
+                    return new HitokotoContent(0, content);
                 else
-                    return JsonConvert.DeserializeObject<Hitokoto>(content);
+                    return JsonConvert.DeserializeObject<HitokotoContent>(content);
             }
         }
     }

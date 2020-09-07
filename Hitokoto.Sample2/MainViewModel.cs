@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using HitokotoApi;
 
-namespace HitokotoApiTest2
+namespace Hitokoto.Sample2
 {
     public class MainViewModel : INotifyPropertyChanged
     {
@@ -15,9 +14,9 @@ namespace HitokotoApiTest2
             private set => Set(ref _isBusy, value);
         }
 
-        private Hitokoto _yiyan;
+        private HitokotoContent _yiyan;
 
-        public Hitokoto Yiyan
+        public HitokotoContent Yiyan
         {
             get => _yiyan;
             private set => Set(ref _yiyan, value);
@@ -26,7 +25,7 @@ namespace HitokotoApiTest2
         public async Task RefreshHitokoto()
         {
             IsBusy = true;
-            Yiyan = await HitokotoUtils.GetHitokoto();
+            Yiyan = await HitokotoHelper.GetHitokoto();
             IsBusy = false;
         }
 

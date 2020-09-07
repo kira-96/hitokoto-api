@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace HitokotoApiTest2
+namespace Hitokoto.Sample2
 {
     public class Boolean2VisibilityConverter : IValueConverter
     {

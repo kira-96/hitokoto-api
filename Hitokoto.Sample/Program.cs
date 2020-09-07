@@ -1,7 +1,6 @@
 ﻿using System;
-using HitokotoApi;
 
-namespace HitokotoApiTest
+namespace Hitokoto.Sample
 {
     class Program
     {
@@ -14,7 +13,7 @@ namespace HitokotoApiTest
                 var key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.Enter)
                 {
-                    var hitokoto = HitokotoUtils.GetHitokoto();
+                    var hitokoto = HitokotoHelper.GetHitokoto();
 
                     Console.WriteLine(hitokoto.Result.Content);
                 }

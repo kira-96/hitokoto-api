@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Platforms>x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HitokotoApi\HitokotoApi.csproj" />
+    <ProjectReference Include="..\Hitokoto.Core\Hitokoto.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
