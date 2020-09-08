@@ -9,7 +9,7 @@ namespace Hitokoto
     public static class HitokotoHelper
     {
         private const string GLOBAL_API_URL = @"https://v1.hitokoto.cn/";
-        // private const string INTERNATIONAL_API_URL = @"https://international.v1.hitokoto.cn";
+        // private const string INTERNATIONAL_API_URL = @"https://international.v1.hitokoto.cn/";
 
         /// <summary>
         /// 获取一言
@@ -30,7 +30,8 @@ namespace Hitokoto
 
             // 只支持 GET 方法
             req.Method = "GET";
-            req.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+            req.ContentType = "application/json; charset=utf-8";
+            req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36";
 
             WebResponse res = await req.GetResponseAsync();
 
