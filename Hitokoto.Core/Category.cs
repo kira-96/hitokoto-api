@@ -66,35 +66,22 @@
         /// <returns>url参数</returns>
         public static string ToParamString(this Category category)
         {
-            switch (category)
+            return category switch
             {
-                case Category.Anime:
-                    return "a";
-                case Category.Comic:
-                    return "b";
-                case Category.Game:
-                    return "c";
-                case Category.Novel:
-                    return "d";
-                case Category.Myself:
-                    return "e";
-                case Category.Internet:
-                    return "f";
-                case Category.Other:
-                    return "g";
-                case Category.Movies:
-                    return "h";
-                case Category.Poetry:
-                    return "i";
-                case Category.NeteaseCloud:
-                    return "j";
-                case Category.Philosophy:
-                    return "k";
-                case Category.抖机灵:
-                    return "l";
-                default:
-                    return "a";
-            }
+                Category.Anime => "a",
+                Category.Comic => "b",
+                Category.Game => "c",
+                Category.Novel => "d",
+                Category.Myself => "e",
+                Category.Internet => "f",
+                Category.Other => "g",
+                Category.Movies => "h",
+                Category.Poetry => "i",
+                Category.NeteaseCloud => "j",
+                Category.Philosophy => "k",
+                Category.抖机灵 => "l",
+                _ => "a",
+            };
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,14 +34,20 @@ namespace Hitokoto
 
             WebResponse res = await req.GetResponseAsync();
 
-            using (StreamReader reader = new StreamReader(res.GetResponseStream()))
-            {
-                string content = await reader.ReadToEndAsync();
+            using StreamReader reader = new StreamReader(res.GetResponseStream());
+            string content = await reader.ReadToEndAsync();
 
-                if (textOnly)
-                    return new HitokotoContent(0, content);
-                else
-                    return JsonConvert.DeserializeObject<HitokotoContent>(content);
+            if (textOnly)
+            {
+                return new HitokotoContent() { Content = content };
+            }
+            else
+            {
+#if NET45
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<HitokotoContent>(content);
+#else
+                return System.Text.Json.JsonSerializer.Deserialize<HitokotoContent>(content);
+#endif
             }
         }
     }

@@ -1,9 +1,13 @@
-﻿namespace Hitokoto
-{
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using System;
+﻿#if NET45
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+#else
+using System.Text.Json.Serialization;
+#endif
+using System;
 
+namespace Hitokoto
+{
     /// <summary>
     /// 一言
     /// </summary>
@@ -12,105 +16,124 @@
         /// <summary>
         /// 一言标识
         /// </summary>
+#if NET45
         [JsonProperty("id")]
-        public int Id { get; private set; }
+#else
+        [JsonPropertyName("id")]
+#endif
+        public int Id { get; set; }
 
         /// <summary>
         /// 一言正文
         /// </summary>
+#if NET45
         [JsonProperty("hitokoto")]
-        public string Content { get; private set; }
+#else
+        [JsonPropertyName("hitokoto")]
+#endif
+        public string Content { get; set; }
 
         /// <summary>
         /// 分类
         /// </summary>
+#if NET45
         [JsonProperty("type")]
+#else
+        [JsonPropertyName("type")]
+#endif
         [JsonConverter(typeof(CategoryConverter))]
-        public Category Category { get; private set; }
+        public Category Category { get; set; }
 
         /// <summary>
         /// 一言的出处
         /// </summary>
+#if NET45
         [JsonProperty("from")]
-        public string From { get; private set; }
+#else
+        [JsonPropertyName("from")]
+#endif
+        public string From { get; set; }
 
         /// <summary>
         /// 一言的作者
         /// </summary>
+#if NET45
         [JsonProperty("from_who")]
-        public string FromWho { get; private set; }
+#else
+        [JsonPropertyName("from_who")]
+#endif
+        public string FromWho { get; set; }
 
         /// <summary>
         /// 添加者
         /// </summary>
+#if NET45
         [JsonProperty("creator")]
-        public string Creator { get; private set; }
+#else
+        [JsonPropertyName("creator")]
+#endif
+        public string Creator { get; set; }
 
         /// <summary>
         /// 添加者用户标识
         /// </summary>
+#if NET45
         [JsonProperty("creator_uid")]
-        public string CreatorUid { get; private set; }
+#else
+        [JsonPropertyName("creator_uid")]
+#endif
+        public int CreatorUid { get; set; }
 
         /// <summary>
         /// 审核员标识
         /// </summary>
+#if NET45
         [JsonProperty("reviewer")]
-        public string Reviewer { get; private set; }
+#else
+        [JsonPropertyName("reviewer")]
+#endif
+        public int Reviewer { get; set; }
 
         /// <summary>
         /// 一言唯一标识；可以链接到 https://hitokoto.cn?uuid=[uuid] 查看这个一言的完整信息
         /// </summary>
+#if NET45
         [JsonProperty("uuid")]
-        public string Uuid { get; private set; }
+#else
+        [JsonPropertyName("uuid")]
+#endif
+        public string Uuid { get; set; }
 
         /// <summary>
         /// 提交方式
         /// </summary>
+#if NET45
         [JsonProperty("commit_from")]
-        public string CommitFrom { get; private set; }
+#else
+        [JsonPropertyName("commit_from")]
+#endif
+        public string CommitFrom { get; set; }
 
         /// <summary>
         /// 上传时间
         /// 使用Unix时间戳
         /// </summary>
+#if NET45
         [JsonProperty("created_at")]
+#else
+        [JsonPropertyName("created_at")]
+#endif
         [JsonConverter(typeof(UnixDateTimeConverter))]  // Unix 时间戳
-        public DateTime Time { get; private set; }
+        public DateTime Time { get; set; }
 
         /// <summary>
         /// 句子长度
         /// </summary>
+#if NET45
         [JsonProperty("length")]
-        public int Length { get; private set; }
-
-        [JsonConstructor]
-        public HitokotoContent(
-            int id,
-            string content,
-            Category cate = Category.None,
-            string from = null,
-            string fromWho = null,
-            string creator = null,
-            string creatorUid = null,
-            string reviewer = null,
-            string uuid = null,
-            string commitFrom = null,
-            DateTime time = new DateTime(),
-            int length = 0)
-        {
-            Id = id;
-            Content = content;
-            Category = cate;
-            From = from;
-            FromWho = fromWho;
-            Creator = creator;
-            CreatorUid = creatorUid;
-            Reviewer = reviewer;
-            Uuid = uuid;
-            CommitFrom = commitFrom;
-            Time = time;
-            Length = length;
-        }
+#else
+        [JsonPropertyName("length")]
+#endif
+        public int Length { get; set; }
     }
 }

@@ -6,9 +6,7 @@ namespace Hitokoto.Sample
     {
         static void Main(string[] args)
         {
-            bool canExit = false;
-
-            while (!canExit)
+            while (true)
             {
                 var key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.Enter)
@@ -19,7 +17,6 @@ namespace Hitokoto.Sample
                 }
                 else if (key == ConsoleKey.Escape)
                 {
-                    canExit = true;
                     break;
                 }
             }
