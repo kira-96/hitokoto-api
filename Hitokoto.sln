@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hitokoto.Core", "Hitokoto.Core\Hitokoto.Core.csproj", "{535FEC9B-F626-4A8A-A8B1-7D4BCF146480}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{8228E5D6-1DE1-41D5-AEF7-ADE193CE0EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitokoto", "Hitokoto\Hitokoto.csproj", "{177C0221-8390-4394-A73D-76EC1DDA16F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hitokoto.Sample", "samples\Hitokoto.Sample\Hitokoto.Sample.csproj", "{34E7AAF9-1368-44BC-9FF2-55C2623460F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitokoto.Sample", "Hitokoto.Sample\Hitokoto.Sample.csproj", "{523D9554-F7FE-4905-BE23-ECDDF7DBAA13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hitokoto.Sample.wpf", "samples\Hitokoto.Sample.wpf\Hitokoto.Sample.wpf.csproj", "{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitokoto.Sample2", "Hitokoto.Sample2\Hitokoto.Sample2.csproj", "{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{021EA8F2-49E4-42DC-A57C-F0BD839AC06F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitokoto", "src\Hitokoto\Hitokoto.csproj", "{177C0221-8390-4394-A73D-76EC1DDA16F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hitokoto.Core", "src\Hitokoto.Core\Hitokoto.Core.csproj", "{535FEC9B-F626-4A8A-A8B1-7D4BCF146480}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,17 +29,23 @@ Global
 		{177C0221-8390-4394-A73D-76EC1DDA16F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{177C0221-8390-4394-A73D-76EC1DDA16F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{177C0221-8390-4394-A73D-76EC1DDA16F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{523D9554-F7FE-4905-BE23-ECDDF7DBAA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{523D9554-F7FE-4905-BE23-ECDDF7DBAA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{523D9554-F7FE-4905-BE23-ECDDF7DBAA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{523D9554-F7FE-4905-BE23-ECDDF7DBAA13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B7D5EA-5B42-4B0E-800E-AD5104F32A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E7AAF9-1368-44BC-9FF2-55C2623460F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E7AAF9-1368-44BC-9FF2-55C2623460F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E7AAF9-1368-44BC-9FF2-55C2623460F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E7AAF9-1368-44BC-9FF2-55C2623460F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{535FEC9B-F626-4A8A-A8B1-7D4BCF146480} = {021EA8F2-49E4-42DC-A57C-F0BD839AC06F}
+		{177C0221-8390-4394-A73D-76EC1DDA16F6} = {021EA8F2-49E4-42DC-A57C-F0BD839AC06F}
+		{87B7D5EA-5B42-4B0E-800E-AD5104F32A32} = {8228E5D6-1DE1-41D5-AEF7-ADE193CE0EA9}
+		{34E7AAF9-1368-44BC-9FF2-55C2623460F9} = {8228E5D6-1DE1-41D5-AEF7-ADE193CE0EA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE6D28A9-32CE-40B0-9029-56F3117ED682}

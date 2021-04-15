@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace Hitokoto.Sample2
+namespace Hitokoto.Sample.wpf
 {
     public class MainViewModel : INotifyPropertyChanged
     {

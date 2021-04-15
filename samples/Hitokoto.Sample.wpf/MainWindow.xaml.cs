@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Hitokoto.Sample2
+namespace Hitokoto.Sample.wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

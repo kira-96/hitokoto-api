@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hitokoto.Core\Hitokoto.Core.csproj" />
+    <ProjectReference Include="..\..\src\Hitokoto.Core\Hitokoto.Core.csproj" />
   </ItemGroup>
 
 </Project>
