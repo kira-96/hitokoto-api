@@ -47,19 +47,19 @@ jobs:
 
     # Build .NET Framework 4.5
     - name: Build Hitokoto
-      run: msbuild ${{env.SOLUTION_FILE_PATH}} -target:"Hitokoto" -p:Configuration=${{env.BUILD_CONFIGURATION}} -p:Platform="Any CPU" -maxCpuCount
+      run: msbuild ${{env.SOLUTION_FILE_PATH}} -p:Configuration=${{env.BUILD_CONFIGURATION}} -p:Platform="Any CPU" -maxCpuCount
 
     # Build with .NET 5
     - name: Build Hitokoto.Core with .NET5
-      run: dotnet build ./Hitokoto.Core/Hitokoto.Core.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework net5.0
+      run: dotnet build ./src/Hitokoto.Core/Hitokoto.Core.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework net5.0
 
     # Build with .NET Core 3.1
     - name: Build Hitokoto.Core with .NET Core 3.1
-      run: dotnet build ./Hitokoto.Core/Hitokoto.Core.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
+      run: dotnet build ./src/Hitokoto.Core/Hitokoto.Core.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
 
     # Build samples
     - name: Build Sample with .NET Core 3.1
-      run: dotnet build ./Hitokoto.Sample/Hitokoto.Sample.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
+      run: dotnet build ./samples/Hitokoto.Sample/Hitokoto.Sample.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
 
-    - name: Build Sample2 with .NET Core 3.1
-      run: dotnet build ./Hitokoto.Sample2/Hitokoto.Sample2.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
+    - name: Build wpf Sample with .NET Core 3.1
+      run: dotnet build ./samples/Hitokoto.Sample.wpf/Hitokoto.Sample.wpf.csproj --configuration ${{env.BUILD_CONFIGURATION}} --framework netcoreapp3.1
